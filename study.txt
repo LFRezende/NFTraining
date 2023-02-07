@@ -1,0 +1,17 @@
+## This is a file of my personal notes, just so I can better graps on the concepts I'm working with. ##
+## I will push this to GitHub, but for my personal study. ##
+## Feel free to ignore ##
+
+
+
+IF storing data OFF-CHAIN, how to ensure decentralization of this information?
+-> IPFS (Inter planetary File System)
+-> IPFS + FILECOIN
+    Full solution ^^^
+-> METADATA
+    -> ONCHAIN METADATA
+    -> OFFCHAIN METADATA
+-> INTERACTABLE NFTS
+    NFT marketplaces right now only know how to pull metadata from the tokenURI.
+    If you with to produce interactable NFTs, with more advanced features, the tokenURI will not suffice.
+    Use tokenURI for the visuals, but everything else must be coded ON-CHAIN!
