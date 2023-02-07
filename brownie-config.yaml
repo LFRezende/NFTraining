@@ -4,3 +4,5 @@ compiler:
   solc:
     remappings:
       - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
+wallets:
+  from_key: ${PRIVATE_KEY}
