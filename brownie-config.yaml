@@ -1,6 +1,6 @@
 dependencies:
-  - OpenZeppelin/openzeppelin-contracts@4.8.1
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
 compiler:
   solc:
     remappings:
-      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.8.1'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
