@@ -15,3 +15,9 @@ IF storing data OFF-CHAIN, how to ensure decentralization of this information?
     NFT marketplaces right now only know how to pull metadata from the tokenURI.
     If you with to produce interactable NFTs, with more advanced features, the tokenURI will not suffice.
     Use tokenURI for the visuals, but everything else must be coded ON-CHAIN!
+
+
+--> ERROS:
+REMEMBER DOTENV!! Unable to expand environment variable in host setting: 'https://goerli.infura.io/v3/$WEB3_INFURA_PROJECT_ID'
+
+REMEMBER DEPLOYMENT DOES NOT REQUIRE WAITING! IT DOESN'T HAVE THIS FUNCTIONALITY.
