@@ -2,7 +2,7 @@ from scripts.utils import getAccount
 from brownie import SimpleCollectible
 
 
-TOKEN_URI = "ipfs://QmYx6GsYAKnNzZ9A6NvEKV9nf1VaDzJrqDR23Y8YSkebLU?filename=shiba-inu.png"
+TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png"
 OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
 
 
@@ -22,10 +22,14 @@ def mintNFT():
     return tx_minted
 
 
-def main():
+def deploy_and_mint():
     deployed = deployContract()
     minted = mintNFT()
     print(
         f"You can view your NFT at {OPENSEA_URL.format(deployed.address, deployed.tokenCounter()-1)}"
     )
     print("You may have to wait up to 20 minutes for the minting to be successful.")
+    return deployed
+
+def main():
+    deploy_and_mint()
