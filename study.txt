@@ -2,7 +2,7 @@
 ## I will push this to GitHub, but for my personal study. ##
 ## Feel free to ignore ##
 
-
+## 10:36:00 PATRICK CHALLENGE!
 
 IF storing data OFF-CHAIN, how to ensure decentralization of this information?
 -> IPFS (Inter planetary File System)
