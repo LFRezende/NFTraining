@@ -21,3 +21,19 @@ IF storing data OFF-CHAIN, how to ensure decentralization of this information?
 REMEMBER DOTENV!! Unable to expand environment variable in host setting: 'https://goerli.infura.io/v3/$WEB3_INFURA_PROJECT_ID'
 
 REMEMBER DEPLOYMENT DOES NOT REQUIRE WAITING! IT DOESN'T HAVE THIS FUNCTIONALITY.
+------------------------
+
+## Advanced Collectible
+--> we need to add a few features.
+
+- The scarcity and the auditability of it in-CHAIN
+- The randomness and the auditability of it in-CHAIN
+- Adding an image to IPFS and linking it to it, as well as understanding why is it decentralized.
+
+--> For the randomness, again, we'll need the chainlink VRFCoordinators and some linktokens.
+- Import into the contract the VRFConsumerBase
+- Do the necessary dependencies and remappings in the config file
+- Make the contract inherit the VRFConsumerBase and its constructor as well 
+- Receive the necessary parameters.
+
+
