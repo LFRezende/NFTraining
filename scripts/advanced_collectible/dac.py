@@ -1,5 +1,5 @@
 from scripts.utils import getAccount, OPENSEA_URL
-from brownie import SimpleCollectible
+from brownie import AdvancedCollectible
 
 
 TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png"
@@ -9,14 +9,14 @@ TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.
 def deployContract():
     account = getAccount()
     # REMEMBER: DEPLOYMENT DOES NOT REQUIRE WAITING!
-    tx_deploy = SimpleCollectible.deploy({"from": account})
+    tx_deploy = AdvancedCollectible.deploy({"from": account})
     # tx_deploy.wait(1)
     return tx_deploy
 
 
 def mintNFT():
     account = getAccount()
-    ctt = SimpleCollectible[-1]
+    ctt = AdvancedCollectible[-1]
     tx_minted = ctt.createCollectible(TOKEN_URI, {"from": account})
     tx_minted.wait(1)
     return tx_minted

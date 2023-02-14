@@ -36,4 +36,7 @@ REMEMBER DEPLOYMENT DOES NOT REQUIRE WAITING! IT DOESN'T HAVE THIS FUNCTIONALITY
 - Make the contract inherit the VRFConsumerBase and its constructor as well 
 - Receive the necessary parameters.
 
+- The createCollectible function calls the VRFCoordinator via requesting randomness.
+- It will make then the VRFCoordinator call fulfillRandomness, delivering a random number.
+- Finally it will choose the NFT to be minted, randomly.
 

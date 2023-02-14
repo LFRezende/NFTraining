@@ -52,7 +52,7 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         emit breedAssigned(newTokenId, breed); // Emit event that it has been bred! Remap --> emit event.
         address owner = requestIdtoSender[requestId]; // The one who first asked for minting!
         _safeMint(owner, newTokenId); // Mints the NFT and registers it to the owner, mapping to the newTokenId.
-        // _setTokenURI(newTokenId, TOKEN_URI)
+        // _setTokenURI(newTokenId, TOKEN_URI) --> Try to code it making the VRFCoord choose it!
         tokenCounter++; // Adds to the tokenCounter in order for the next mint to have a unique id as well.
     }
 
