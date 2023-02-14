@@ -1,5 +1,5 @@
 from scripts.utils import LOCAL_CHAINS, FORKED_CHAINS, getAccount
-from scripts.dac import deploy_and_mint
+from scripts.simple_collectible.dac import deploy_and_mint
 from brownie import SimpleCollectible, network
 import pytest
 

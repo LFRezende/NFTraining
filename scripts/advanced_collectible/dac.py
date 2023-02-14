@@ -1,9 +1,9 @@
-from scripts.utils import getAccount
+from scripts.utils import getAccount, OPENSEA_URL
 from brownie import SimpleCollectible
 
 
 TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png"
-OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
+
 
 
 def deployContract():

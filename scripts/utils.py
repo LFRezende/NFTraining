@@ -2,6 +2,7 @@ from brownie import accounts, network, config
 
 LOCAL_CHAINS = ["development"]
 FORKED_CHAINS = ["mainnet-fork"]
+OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
 
 
 def getAccount(id=None, index=None):
