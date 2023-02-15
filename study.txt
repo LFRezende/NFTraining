@@ -40,3 +40,11 @@ REMEMBER DEPLOYMENT DOES NOT REQUIRE WAITING! IT DOESN'T HAVE THIS FUNCTIONALITY
 - It will make then the VRFCoordinator call fulfillRandomness, delivering a random number.
 - Finally it will choose the NFT to be minted, randomly.
 
+- After each remapping, always remember to emit an event to be easier to keep track of it.
+- Also, index the origin parameter of the mapping in the event as well.
+
+____ 
+
+- For the Advanced Collectible, you'll need some addresses for link token, keyhash etc.
+- Remember to grab those from chainlink documentation.
+

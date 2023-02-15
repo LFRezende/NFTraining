@@ -9,9 +9,9 @@ TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.
 def deployContract():
     account = getAccount()
     # REMEMBER: DEPLOYMENT DOES NOT REQUIRE WAITING!
-    tx_deploy = AdvancedCollectible.deploy({"from": account})
+    adv = AdvancedCollectible.deploy({"from": account})
     # tx_deploy.wait(1)
-    return tx_deploy
+    return adv
 
 
 def mintNFT():
