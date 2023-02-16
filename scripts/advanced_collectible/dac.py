@@ -9,7 +9,7 @@ TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.
 def deployContract():
     account = getAccount()
     # REMEMBER: DEPLOYMENT DOES NOT REQUIRE WAITING!
-    adv = AdvancedCollectible.deploy(
+    tx_deploy = AdvancedCollectible.deploy(
         getContract("vrfCoordinator"),
         getContract("linkToken"),
         config["networks"][network.show_active()]["keyHash"],
@@ -17,6 +17,13 @@ def deployContract():
         {"from": account},
     )
     print("-->  Advanced Collectible Deployed!")
+
+    return tx_deploy
+
+
+def mintCollectible():
+    account = getAccount()
+    adv = AdvancedCollectible[-1]
     fundLink(adv.address)
     creating_tx = adv.createCollectible({"from": account})
     creating_tx.wait(1)
@@ -24,7 +31,7 @@ def deployContract():
     print(
         f"You can view your NFT at {OPENSEA_URL.format(adv.address, adv.tokenCounter()-1)}"
     )
-    return adv, creating_tx
+    return adv
 
 
 def fundLink(
@@ -41,3 +48,4 @@ def fundLink(
 
 def main():
     deployContract()
+    mintCollectible()

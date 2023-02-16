@@ -1,4 +1,4 @@
-from brownie import accounts, network, config, VRFCoordinatorMock, LinkToken, Contract
+from brownie import accounts, network, config, VRFCoordinatorMock, LinkToken, Contract, AdvancedCollectible
 
 LOCAL_CHAINS = ["development"]
 FORKED_CHAINS = ["mainnet-fork"]
@@ -48,3 +48,8 @@ def deploy_mocks():
     print("-->  VRFCoordinatorMock deployed!")
     deployed_mocks = {"linkToken": linktoken, "vrfCoordinator": vrf}
     return deployed_mocks
+
+BREED_MAPPING = {0: "PUG", 1: "SHIBA_INU", 2: "ST_BERNARD"}
+
+def getBreed(tokenId):
+    return BREED_MAPPING[AdvancedCollectible[-1].tokenIdtoBreed(tokenId)]
