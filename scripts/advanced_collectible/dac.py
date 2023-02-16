@@ -1,4 +1,4 @@
-from scripts.utils import getAccount, getContract, config, network, OPENSEA_URL
+from scripts.utils import getAccount, getContract, config, network, Web3, OPENSEA_URL
 from brownie import AdvancedCollectible
 
 
@@ -15,7 +15,18 @@ def deployContract():
         config["networks"][network.show_active()]["fee"],
         {"from": account},
     )
+    print("-->  Advanced Collectible Deployed!")
+    fundLink(adv.address)
     return adv
+
+
+def fundLink(contract_address, account=None, linktoken=None, amount=0.1 * 10**18):
+    account = account if account else getAccount()
+    linktoken = linktoken if linktoken else getContract("linkToken")
+    tx_fund = linktoken.transfer(contract_address, amount, {"from": account})
+    tx_fund.wait(1)
+    print(f"Contract has been funded with {Web3.fromWei(amount)} LINK!")
+    return tx_fund
 
 
 def main():
