@@ -19,9 +19,9 @@ networks:
     keyHash: '0x0476f9a745b61ea5c0ab224d3a6e4c99f0b02fce4da01143a4f70aa80ae76e8a'
     fee: 100000000000000000 # 0.1 LINK
   mainnet-fork:
-    vrfCoordinator:
-    linkToken:
-    keyHash:
-    fee: 
+    vrfCoordinator: '0xf0d54349aDdcf704F77AE15b96510dEA15cb7952'
+    linkToken: '0x514910771AF9Ca656af840dff83E8264EcF986CA'
+    keyHash: '0xAA77729D3466CA35AE8D28B3BBAC7CC36A5031EFDC430821C02BC31A238AF445'
+    fee: 2000000000000000000 # 2 LINK
 
 
