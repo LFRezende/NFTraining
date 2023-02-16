@@ -19,14 +19,19 @@ def getAccount(id=None, index=None):
 name_to_type = {"vrfCoordinator": VRFCoordinatorMock, "linkToken": LinkToken}
 
 
-def getContract(contract_name=None):
-    contract_type = name_to_type[contract_name]  # This is a list of contracts still
+def getContract(contract_name):
+    # Contract type called by the name via mapping
+    contract_type = name_to_type[contract_name]
+    # Should it be a local chain, we must deploy the necessary Mock.
     if network.show_active() in LOCAL_CHAINS:
         if len(contract_type) <= 0:
             deploy_mocks()
+        # Remember always that when we call a ".SOL" from Brownie we actually call a list of Smart Contracts.
         contract = contract_type[-1]
     else:
+        # Should it not be local, pull the address from the config.
         contract_address = config["networks"][network.show_active()][contract_name]
+        # Fabricate a contract via the mock abi, the pulled address and the name.
         contract = Contract.from_abi(
             contract_type._name, contract_address, contract_type.abi
         )
