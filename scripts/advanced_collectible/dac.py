@@ -21,7 +21,10 @@ def deployContract():
     creating_tx = adv.createCollectible({"from": account})
     creating_tx.wait(1)
     print("NFT minted!")
-    return adv
+    print(
+        f"You can view your NFT at {OPENSEA_URL.format(adv.address, adv.tokenCounter()-1)}"
+    )
+    return adv, creating_tx
 
 
 def fundLink(
