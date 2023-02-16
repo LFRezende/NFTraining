@@ -1,4 +1,4 @@
-from scripts.utils import getAccount, OPENSEA_URL
+from scripts.utils import getAccount,getContract, OPENSEA_URL
 from brownie import AdvancedCollectible
 
 
@@ -9,7 +9,8 @@ TOKEN_URI = "ipfs://QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.
 def deployContract():
     account = getAccount()
     # REMEMBER: DEPLOYMENT DOES NOT REQUIRE WAITING!
-    adv = AdvancedCollectible.deploy({"from": account})
+    adv = AdvancedCollectible.deploy(getContract("vrfCoordinator"), getContract("linkToken")
+                                     {"from": account})
     # tx_deploy.wait(1)
     return adv
 
