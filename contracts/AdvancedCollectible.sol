@@ -53,7 +53,7 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         address owner = requestIdtoSender[requestId]; // The one who first asked for minting!
         _safeMint(owner, newTokenId); // Mints the NFT and registers it to the owner, mapping to the newTokenId.
         // _setTokenURI(newTokenId, TOKEN_URI) --> Try to code it making the VRFCoord choose it!
-        tokenCounter++; // Adds to the tokenCounter in order for the next mint to have a unique id as well.
+        tokenCounter = tokenCounter + 1; // Adds to the tokenCounter in order for the next mint to have a unique id as well.
     }
 
     // For now, we set the TokenURI

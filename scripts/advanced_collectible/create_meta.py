@@ -5,9 +5,9 @@ from brownie import AdvancedCollectible
 
 
 def createMeta():
-    deployed = deployContract()
     adv = mintCollectible()
     adv = mintCollectible()
+    adv = AdvancedCollectible[-1]
     NFTnumber = adv.tokenCounter()
     print(f"You have now {NFTnumber} of collectibles!")
     for tokenId in range(0, NFTnumber):
