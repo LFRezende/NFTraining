@@ -1,8 +1,10 @@
 from scripts.utils import LOCAL_CHAINS, FORKED_CHAINS, getAccount, getContract
-from scripts.advanced_collectible.dac import deployContract, mintCollectible
+from scripts.advanced_collectible.dac import deployContract
 from brownie import AdvancedCollectible, network
 import time
 import pytest
+
+RNG = 777
 
 
 def test_create_adv_int():
@@ -13,8 +15,7 @@ def test_create_adv_int():
     ):
         pytest.skip("Only for TESTNET testing!")
     ## Act
-    rx_deployed = deployContract()
-    adv_collectible = mintCollectible()
+    adv_collectible, created_tx = deployContract()
     # Giving time for the VRFCoordinator to respond.
     time.sleep(60)
     ## Assert

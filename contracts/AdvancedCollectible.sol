@@ -46,6 +46,7 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         internal
         override
     {
+        require(true == false, "ARRIVED!");
         Breed breed = Breed(randomNumber % DogAmount); // Sorting out the NFT to be minted!
         uint256 newTokenId = tokenCounter; // Grabbing the tokenId for the Minting (must be unique)
         tokenIdtoBreed[newTokenId] = breed; // Identify the tokenId to your PUP
